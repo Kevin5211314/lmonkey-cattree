@@ -12,8 +12,8 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
@@ -73,8 +73,6 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
         'L' => 
         array (
             'League\\Flysystem\\' => 17,
-            'League\\CommonMark\\Ext\\Table\\' => 28,
-            'League\\CommonMark\\' => 18,
         ),
         'I' => 
         array (
@@ -226,14 +224,6 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
-        'League\\CommonMark\\Ext\\Table\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/league/commonmark-ext-table/src',
-        ),
-        'League\\CommonMark\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/league/commonmark/src',
-        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -268,6 +258,16 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Parsedown' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
     );
@@ -277,6 +277,7 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit7659bca12d203c9ad3e54d150d778546::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit7659bca12d203c9ad3e54d150d778546::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7659bca12d203c9ad3e54d150d778546::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit7659bca12d203c9ad3e54d150d778546::$classMap;
 
         }, null, ClassLoader::class);
