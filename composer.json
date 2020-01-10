@@ -18,6 +18,6 @@
             "email": "794783766@qq.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
