@@ -1,0 +1,14 @@
+{
+    "name": "lmonkey/cattree",
+    "description": "高老师的composer作业",
+    "type": "project",
+    "license": "1.0",
+    "authors": [
+        {
+            "name": "jingfei",
+            "email": "794783766@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
