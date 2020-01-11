@@ -1,13 +1,13 @@
 {
-    "name": "yin32167/cpstpl",
+    "name": "lmonkey/cattree",
     "description":  "My template of composer project!",
-    "keywords": ["yin32167"],
+    "keywords": ["lmonkey"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Magina Yin",
-            "email": "yin32167@aliyun.com",
-            "homepage": "https://github.com/yin32167",
+            "name": "JingFei Ding",
+            "email": "794783766@qq.com",
+            "homepage": "https://blog.kevinfei.com/",
             "role": "Developer"
         }
     ],
@@ -23,12 +23,12 @@
            
         ],
         "psr-4": {
-            "Yin32167\\CpsTpl\\": "src/"
+            "lmonkey\\cattree\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Yin32167\\CpsTpl\\Tests\\": "tests/"
+            "lmonkey\\cattree\\Tests\\": "tests/"
         }
     }
 }
