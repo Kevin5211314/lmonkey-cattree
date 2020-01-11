@@ -1,23 +1,32 @@
 {
     "name": "lmonkey/cattree",
-    "type": "project",
-    "description": "高老师的composer作业",
+    "description":  "My template of composer project!",
+    "keywords": ["cattree"],
     "license": "MIT",
-    "require": {
-        "php": "^7.2",
-        "laravel/framework": "^5.6"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/"
-        }
-    },
     "authors": [
         {
             "name": "jingfei",
             "email": "794783766@qq.com"
         }
     ],
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "require": {
+        "monolog/monolog": "1.0.*",
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "classmap": [
+           
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
 }
