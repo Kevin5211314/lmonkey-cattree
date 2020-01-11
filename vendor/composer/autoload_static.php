@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
+class ComposerStaticInit975a2e6e078ba46a36285b25511fff0a
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -16,13 +16,14 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'Y' => 
+        array (
+            'Yin32167\\CpsTpl\\Tests\\' => 22,
+            'Yin32167\\CpsTpl\\' => 16,
+        ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
-        ),
-        'T' => 
-        array (
-            'Tests\\' => 6,
         ),
         'S' => 
         array (
@@ -37,10 +38,6 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
-        'A' => 
-        array (
-            'App\\' => 4,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -50,13 +47,17 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
+        'Yin32167\\CpsTpl\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'Yin32167\\CpsTpl\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
-        ),
-        'Tests\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/tests',
         ),
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
@@ -73,10 +74,6 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
@@ -674,10 +671,10 @@ class ComposerStaticInit7659bca12d203c9ad3e54d150d778546
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7659bca12d203c9ad3e54d150d778546::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7659bca12d203c9ad3e54d150d778546::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit7659bca12d203c9ad3e54d150d778546::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit7659bca12d203c9ad3e54d150d778546::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit975a2e6e078ba46a36285b25511fff0a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit975a2e6e078ba46a36285b25511fff0a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit975a2e6e078ba46a36285b25511fff0a::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit975a2e6e078ba46a36285b25511fff0a::$classMap;
 
         }, null, ClassLoader::class);
     }

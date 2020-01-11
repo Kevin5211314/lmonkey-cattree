@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Yin32167\CpsTpl\Tests;
 
-use DemoTest;
 use PHPUnit\Framework\TestCase;
+use Yin32167\CpsTpl\CpsTplExample;
 
-final class DemoTest extends TestCase 
+final class CpsTplExampleTest extends TestCase 
 {
 
     public function testCannotBeShow()
