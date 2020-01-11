@@ -20,22 +20,18 @@ use Monolog\Logger;
  * @author Christophe Coevoet <stof@notk.org>
  * @author Kirill chEbba Chebunin <iam@chebba.org>
  */
-class WildfireFormatter extends NormalizerFormatter
+class WildfireFormatter implements FormatterInterface
 {
-    const TABLE = 'table';
-
     /**
      * Translates Monolog log levels to Wildfire levels.
      */
     private $logLevels = array(
-        Logger::DEBUG     => 'LOG',
-        Logger::INFO      => 'INFO',
-        Logger::NOTICE    => 'INFO',
-        Logger::WARNING   => 'WARN',
-        Logger::ERROR     => 'ERROR',
-        Logger::CRITICAL  => 'ERROR',
-        Logger::ALERT     => 'ERROR',
-        Logger::EMERGENCY => 'ERROR',
+        Logger::DEBUG    => 'LOG',
+        Logger::INFO     => 'INFO',
+        Logger::WARNING  => 'WARN',
+        Logger::ERROR    => 'ERROR',
+        Logger::CRITICAL => 'ERROR',
+        Logger::ALERT    => 'ERROR',
     );
 
     /**
@@ -54,40 +50,27 @@ class WildfireFormatter extends NormalizerFormatter
             unset($record['extra']['line']);
         }
 
-        $record = $this->normalize($record);
         $message = array('message' => $record['message']);
-        $handleError = false;
         if ($record['context']) {
             $message['context'] = $record['context'];
-            $handleError = true;
         }
         if ($record['extra']) {
             $message['extra'] = $record['extra'];
-            $handleError = true;
         }
         if (count($message) === 1) {
             $message = reset($message);
         }
 
-        if (isset($record['context'][self::TABLE])) {
-            $type  = 'TABLE';
-            $label = $record['channel'] .': '. $record['message'];
-            $message = $record['context'][self::TABLE];
-        } else {
-            $type  = $this->logLevels[$record['level']];
-            $label = $record['channel'];
-        }
-
         // Create JSON object describing the appearance of the message in the console
-        $json = $this->toJson(array(
+        $json = json_encode(array(
             array(
-                'Type'  => $type,
+                'Type'  => $this->logLevels[$record['level']],
                 'File'  => $file,
                 'Line'  => $line,
-                'Label' => $label,
+                'Label' => $record['channel'],
             ),
             $message,
-        ), $handleError);
+        ));
 
         // The message itself is a serialization of the above JSON object + it's length
         return sprintf(
@@ -100,14 +83,5 @@ class WildfireFormatter extends NormalizerFormatter
     public function formatBatch(array $records)
     {
         throw new \BadMethodCallException('Batch formatting does not make sense for the WildfireFormatter');
-    }
-
-    protected function normalize($data, $depth = 0)
-    {
-        if (is_object($data) && !$data instanceof \DateTime) {
-            return $data;
-        }
-
-        return parent::normalize($data, $depth);
     }
 }
